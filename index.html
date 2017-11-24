@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LucyIoT</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+	</head>
+	<body>
+		<div class="container">
+			
+					
+
+                    <p align = "center" class = "creator">Internet of Things</p>
+					<p align = "center" class="creator">By Anas G.</p>
+			
+		</div>
+		<div class="container">
+		<ul id = "myTab" class = "nav nav-tabs">
+   			<li class = "active">
+	  			<a href = "#home" data-toggle = "tab">
+		 			Controls
+	  			</a>
+   			</li>
+   
+   			<li>
+				<a href = "#ios" data-toggle = "tab">Charts</a>
+			</li>
+		</ul>
+
+		<div id = "myTabContent" class = "tab-content">
+			<div class="container">
+				<div class = "tab-pane fade in active" id = "home">
+						<div class="rows">
+							<div class="col-sm-6">
+   								<form action="button.php" method="POST">
+									<div class="form-group">
+										<label for="email">
+										Fan:
+										</label>
+										<button type="submit"   class="btn btn-success" name="on" value="Turn On" onClick="myfunction();">Turn On</button>
+										<button type="submit" class="btn btn-danger" name="off" value="Turn Off" onClick="myfunction1();">Turn Off</button>
+										
+											<div  class="span4 pull-right">
+											<div id="bt1" class="alert alert-danger fade">
+												<button type="button" class="close" data-dismiss="alert">×</button>
+											<strong>Fan On</strong> 
+											</div>
+											</div>
+											
+											<div class="span4 pull-right">
+											<div id="bt" class="alert alert-danger fade">
+												<button type="button" class="close" data-dismiss="alert">×</button>
+											<strong>Fan Off</strong> 
+											</div>
+											</div>
+											
+
+											
+											
+											
+											
+									</div>
+								</form>
+							</div>
+							
+							<div class="col-sm-6">
+								<form action="button.php" method="POST">
+									<div class="form-group">
+										<label for="email">
+										Light:
+										</label>
+										<button type="submit" class="btn btn-success" name="on1" value="Turn On" onClick="myfunction2();">Turn On</button>
+										<button type="submit" class="btn btn-danger" name="off1" value="Turn Off" onClick="myfunction3();">Turn Off</button>
+										
+										
+										<div  class="span4 pull-right">
+											<div id="bt2" class="alert alert-danger fade">
+												<button type="button" class="close" data-dismiss="alert">×</button>
+											<strong>Light On</strong> 
+											</div>
+											</div>
+											
+										<div  class="span4 pull-right">
+											<div id="bt3" class="alert alert-danger fade">
+												<button type="button" class="close" data-dismiss="alert">×</button>
+											<strong>Light Off</strong> 
+											</div>
+											</div>	
+										
+										
+										
+										
+									</div>
+								</form>
+							</div>
+						</div>
+				</div>	
+   
+   				<div class = "tab-pane fade" id = "ios">
+					<div class="row">
+						<div class="col-sm-6 ">
+	  						<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/370866/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+   						</div>
+						<div class="col-sm-6">
+							<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/370866/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+						</div>
+					</div>
+				</div>
+   			</div>
+		</div>	
+		
+			
+
+	</div>
+		
+	</script>
+	</body>
+	</html>
+	
+												<script>
+				
+	function myfunction() {
+	$("#bt1").removeClass("in").show();
+	 $(".alert").delay(200).addClass("in").fadeOut(2000); 
+}
+
+function myfunction1() {
+	$("#bt").removeClass("in").show();
+	 $(".alert").delay(200).addClass("in").fadeOut(2000); 
+}
+
+function myfunction2() {
+	$("#bt2").removeClass("in").show();
+	 $(".alert").delay(200).addClass("in").fadeOut(2000); 
+}
+
+function myfunction3() {
+	$("#bt3").removeClass("in").show();
+	 $(".alert").delay(200).addClass("in").fadeOut(2000); 
+}
+</script>
